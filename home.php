@@ -11,7 +11,9 @@ $pro = $_FILES['profile'];
 if(!empty($name)){
     $location = "upload/";
     if(move_uploaded_file($tmp_name,$location. $name)){
-        echo "File upload Successfully";
+        echo "File upload Successfully.<br>";
+        $path=$location. $name;
+        echo "<img src='$path' width='200' height='300'>"; 
     }else{
         echo "Failed";
     }

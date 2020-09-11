@@ -1,6 +1,7 @@
 
 <?php
-//learning upload file
+//learning upload file----------------------
+
 // $pro = $_FILES['profile'];
 
 //  $name = $pro['name'];
@@ -20,6 +21,8 @@
 //     echo"file not found";
 // }
 
+// -------------------------------------------------------
+
 
 // if($usr=="google"){
 //       header("location: https://www.google.com");
@@ -29,6 +32,9 @@
 // }else{
 //     echo "you didn't redirect";
 // }
+
+
+// --------- password entry ---------------------------------------
 
 // $usrname = $_REQUEST['username'];
 // $usremail = $_REQUEST['email'];
@@ -42,6 +48,9 @@
 // //      echo "perfect";
 // //    }
 
+
+// encrypt method -------------------------------------------------
+
 // $hash_format = "$2y$07$";
 // $salt = "sdfgjghdfhjgdfh22dgshfhjdfhjgh";
 
@@ -51,9 +60,37 @@
 // echo "<br>";
 // echo crypt($usrpassword ,$conC);
 
+
+// --------------------------------------------------------
+
 // session_start();
 
 // echo $_SESSION['user'];
+
+// Inserted practise---------------------------------------------------------------
+
+// if(isset($_POST['submit'])){
+//     $username =  $_POST['username'];
+//     $email =    $_POST['email'];
+//     $password =    $_POST['password'];
+ 
+//     $connection = mysqli_connect('localhost','root','','users');
+    
+//     if(!$connection){
+//        die("Not connected.". mysqli_error($connection));
+//     }
+
+//     $query = "INSERT INTO user_info (username, email,password) VALUES ('$username','$email','$password')";
+
+//     $result = mysqli_query($connection,$query);
+
+//     if($result){
+//         echo "Insert success";
+//     }else{
+//         echo "Insert not success";
+//     }
+ 
+//  }
 
 ?>
 

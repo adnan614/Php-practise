@@ -1,7 +1,6 @@
 
-
 <?php
-
+//learning upload file
 // $pro = $_FILES['profile'];
 
 //  $name = $pro['name'];
@@ -51,6 +50,10 @@
 // echo  $usrpassword;
 // echo "<br>";
 // echo crypt($usrpassword ,$conC);
+
+// session_start();
+
+// echo $_SESSION['user'];
 
 ?>
 

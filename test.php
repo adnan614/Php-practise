@@ -16,13 +16,32 @@
  
  </form> -->
 
-
-  <?php
+<!--  Cookie learning -->
+<?php
 
 // //   if(isset($_REQUEST['wrongpass'])){
 // //         echo $_REQUEST['wrongpass'];
 //   }
+
+// $name = "user";
+// $value = "alvi";
  
+// setcookie($name, $value, time()+20); 
 
-
+// if(isset($_COOKIE['user'])){
+//       echo "Saved cookie is = {$_COOKIE['user']}";
+// }else{
+//       echo "Cookie is not set";
+// }
 ?> 
+
+<!-- Session Learning -->
+
+<?php
+
+// session_start();
+
+// $_SESSION['user'] = "alvi";
+
+
+?>

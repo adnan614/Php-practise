@@ -174,7 +174,7 @@ $connection = mysqli_connect('localhost','root','','users');
                 <td><?php  echo $username ?></td>
                 <td><?php  echo $email ?></td>
                 <td><?php  echo $password ?></td>
-                <td><a href="single_data_edit.php?edit_id=<?php echo $id  ?>">Edit</a> || <a onclick="return confirm('Are you sure?')" href="delete.php?id=<?php  echo $id  ?>">Delete</a></a></td>
+                <td><a href="single_data_edit.php?edit_id=<?php echo $id  ?>">Edit</a> || <a onclick="return confirm('Are you sure?')" href="delete.php?id=<?php  echo $id  ?>&profile_pic=<?php echo $profile_pic ?>">Delete</a></a></td>
        </tr>
      </tbody>
 

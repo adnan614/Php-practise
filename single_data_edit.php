@@ -22,13 +22,13 @@ $connection = mysqli_connect('localhost','root','','users');
          
   ?>
 
-<form action="home.php" method="post"> 
+<form action="update_data.php" method="post"> 
  
  <input type="text" name="username" value="<?php echo $row['username']  ?>" placeholder="username"><br>
   <input type="email" name="email" value="<?php echo $row['email']?>" placeholder="email"><br>
   <input type="password" name="password" value= "<?php echo $row['password']  ?>" placeholder="password"><br>   
   <input type="submit" name="submit" value="Update data">
-
+  <input type="hidden" name="updating_hidden_id" value="<?php  echo $recv_id;   ?>">
 
 </form>
 

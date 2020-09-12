@@ -118,7 +118,10 @@ $connection = mysqli_connect('localhost','root','','users');
 
        if(isset($_REQUEST['deleted'])){
            echo "<font color='red'>Data Deleted</font>";
-       }    
+       }
+       if(isset($_REQUEST['updated'])){
+        echo "<font color='green'>Data Updated</font>";
+    }       
 
    ?>
     <div class="container">

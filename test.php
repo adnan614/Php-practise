@@ -43,7 +43,7 @@
 
 ?>
 
-<!-- <form action="home.php" method="post"> 
+<form action="home.php" method="post"> 
  
        <input type="text" name="username" placeholder="username"><br>
       <input type="email" name="email" placeholder="email"><br>
@@ -51,4 +51,6 @@
       <input type="submit" name="submit" value="submit">
  
  
- </form> -->
+ </form>
+
+

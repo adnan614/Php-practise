@@ -73,7 +73,9 @@
 //     $username =  $_POST['username'];
 //     $email =    $_POST['email'];
 //     $password =    $_POST['password'];
- 
+
+//     if($username && $email && $password){
+    
 //     $connection = mysqli_connect('localhost','root','','users');
     
 //     if(!$connection){
@@ -89,8 +91,48 @@
 //     }else{
 //         echo "Insert not success";
 //     }
+
+//     }else{
+//         echo "any field cannot be blank";
+//     }
  
 //  }
 
+// data read -----------------------------------------------------------
+
+// $connection = mysqli_connect('localhost','root','','users');
+    
+//     if(!$connection){
+//        die("Not connected.". mysqli_error($connection));
+//     }
+
+//     $query = "SELECT * FROM  user_info";
+
+//     $result = mysqli_query($connection,$query);
+
+//     $count = mysqli_num_rows($result);
+
+//     if($count > 0){
+
+//     while($row = mysqli_fetch_assoc($result)){
+        
+//         echo "{$row['id']}";
+//         echo "<br>";
+
+//         echo "{$row['username']}";
+//         echo "<br>";
+
+//         echo "{$row['email']}";
+//         echo "<br>";
+
+//     }
+
+//     echo "data = $count";
+
+//     }else{
+//         echo "You don't have any data on your database";
+//     }
+
 ?>
 
+  

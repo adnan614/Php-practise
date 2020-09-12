@@ -170,11 +170,11 @@ $connection = mysqli_connect('localhost','root','','users');
          <tr> 
                 <td><?php  echo $serial_number ?></td>
                 <td><?php  echo $id ?></td>
-                <td><img  width ="50px" src="upload/<?php echo $profile_pic; ?>"></td>
+                <td><img  width ="70px" src="upload/<?php echo $profile_pic; ?>"></td>
                 <td><?php  echo $username ?></td>
                 <td><?php  echo $email ?></td>
                 <td><?php  echo $password ?></td>
-                <td><a href="single_data_edit.php?edit_id=<?php echo $id  ?>">Edit</a> || <a href="delete.php?id=<?php  echo $id  ?>">Delete</a></a></td>
+                <td><a href="single_data_edit.php?edit_id=<?php echo $id  ?>">Edit</a> || <a onclick="return confirm('Are you sure?')" href="delete.php?id=<?php  echo $id  ?>">Delete</a></a></td>
        </tr>
      </tbody>
 

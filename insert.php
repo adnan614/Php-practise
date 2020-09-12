@@ -9,6 +9,20 @@ if(isset($_POST['submit'])){
 
         $image_name = $recv_file['name'];
         $image_tmp_name = $recv_file['tmp_name'];
+       
+        $name_changer = uniqid().".png";
+
+        if(!empty($image_name)){
+            
+            $loc = "upload/";
+
+            if(move_uploaded_file($image_tmp_name,$loc.$name_changer)){
+                header("location: home.php");
+            }
+
+        }else{
+            echo "your file is empty";
+        }
     
        
         
@@ -18,7 +32,7 @@ if(isset($_POST['submit'])){
            die("Not connected.". mysqli_error($connection));
         }
     
-        $query = "INSERT INTO user_info (username, email,password) VALUES ('$username','$email','$password')";
+        $query = "INSERT INTO user_info (profile_pic,username, email,password) VALUES ('$name_changer','$username','$email','$password')";
     
         $result = mysqli_query($connection,$query);
     

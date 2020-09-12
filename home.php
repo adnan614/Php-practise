@@ -102,77 +102,73 @@
 
 // data read -----------------------------------------------------------
 
-// $connection = mysqli_connect('localhost','root','','users');
+$connection = mysqli_connect('localhost','root','','users');
     
-//     if(!$connection){
-//        die("Not connected.". mysqli_error($connection));
-//     }
+    if(!$connection){
+       die("Not connected.". mysqli_error($connection));
+    }
 
-//     $query = "SELECT * FROM  user_info";
+    $query = "SELECT * FROM  user_info";
 
-//     $result = mysqli_query($connection,$query);
+    $result = mysqli_query($connection,$query);
 
-//     $count = mysqli_num_rows($result);
+    $count = mysqli_num_rows($result);
 
-//     if($count > 0){
+    if($count > 0){
 
-//        if(isset($_REQUEST['deleted'])){
-//            echo "<font color='red'>Data Deleted</font>";
-//        }    
+       if(isset($_REQUEST['deleted'])){
+           echo "<font color='red'>Data Deleted</font>";
+       }    
 
-//   ?>
-<!-- //  <div class="container">
-//  <table class="table">
-//     <thead class="thead-dark">
-//         <tr>
-//            <th>ID</th>
-//            <th>NAME</th>
-//            <th>EMAIL</th>
-//            <th>PASSWORD</th>
-//            <th>ACTION</th>
-//         </tr>
-//     </thead> -->
+   ?>
+    <div class="container">
+      <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>EMAIL</th>
+                <th>PASSWORD</th>
+            <th>ACTION</th>
+        </tr>
+        </thead>
    
 
-//  <?php
-//     while($row = mysqli_fetch_assoc($result)){
+  <?php
+    while($row = mysqli_fetch_assoc($result)){
         
-//        $id = $row['id'];
-//        $username =  $row['username'];
-//        $email = $row['email'];
-//        $password =  $row['password'];
+       $id = $row['id'];
+       $username =  $row['username'];
+       $email = $row['email'];
+       $password =  $row['password'];
 
-//   ?>
-<!-- //     <tbody>
-//         <tr> 
-//             <td><?php  echo $id ?></td>
-//             <td><?php  echo $username ?></td>
-//             <td><?php  echo $email ?></td>
-//             <td><?php  echo $password ?></td>
-//             <td><a href="delete.php?id=<?php  echo $id  ?>">Delete</a></a></td>
-//         </tr>
-//     </tbody> -->
+   ?>
+     <tbody>
+         <tr> 
+                <td><?php  echo $id ?></td>
+                <td><?php  echo $username ?></td>
+                <td><?php  echo $email ?></td>
+                <td><?php  echo $password ?></td>
+                <td><a href="single_data_edit.php?edit_id=<?php echo $id  ?>">Edit</a> || <a href="delete.php?id=<?php  echo $id  ?>">Delete</a></a></td>
+       </tr>
+     </tbody>
 
  <?php
-//     }
+    }
 
-// ?>
+?>
 
-<!-- //  </table> -->
+ </table>
  <?php
-//     echo "data = $count";
+    echo "data = $count";
 
-//     }else{
-//         echo "You don't have any data on your database";
-//     }
+    }else{
+        echo "You don't have any data on your database";
+    }
 
-// ?>
+?>
 
-<!-- //  </div> -->
-
-
-
-
+ </div>
 
 
 </div>

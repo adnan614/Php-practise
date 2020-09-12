@@ -1,3 +1,5 @@
+<?php require 'include/template.php' ?>
+
 <!-- <form action="home.php"  method="post" enctype="multipart/form-data">
 
       <input type="file" name="profile"><br>
@@ -42,6 +44,7 @@
 
 
 ?>
+
 
 <form action="home.php" method="post"> 
  

@@ -124,12 +124,27 @@ $connection = mysqli_connect('localhost','root','','users');
     }       
 
    ?>
+
+<form action="insert.php" method="post" enctype="multipart/form-data"> 
+ 
+ <input type="text" name="username" placeholder="username">
+  <input type="email" name="email" placeholder="email">
+  <input type="password" name="password" placeholder="password">   
+  <input type="file" name="upload_image" value="Upload">
+  <input type="submit" name="submit" value="submit">
+
+
+</form>
+
+<br>
+
     <div class="container">
       <table class="table">
         <thead class="thead-dark">
         <tr>
             <th>Serial No.</th>
             <th>ID</th>
+            <th>Profiles</th>
             <th>NAME</th>
             <th>EMAIL</th>
             <th>PASSWORD</th>
@@ -145,6 +160,7 @@ $connection = mysqli_connect('localhost','root','','users');
         
        $id = $row['id'];
        $username =  $row['username'];
+       $profile_pic = $row['profile_pic'];
        $email = $row['email'];
        $password =  $row['password'];
        $serial_number++;
@@ -154,6 +170,7 @@ $connection = mysqli_connect('localhost','root','','users');
          <tr> 
                 <td><?php  echo $serial_number ?></td>
                 <td><?php  echo $id ?></td>
+                <td><img  width ="50px" src="upload/<?php echo $profile_pic; ?>"></td>
                 <td><?php  echo $username ?></td>
                 <td><?php  echo $email ?></td>
                 <td><?php  echo $password ?></td>

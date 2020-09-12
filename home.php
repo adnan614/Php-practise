@@ -128,26 +128,31 @@ $connection = mysqli_connect('localhost','root','','users');
       <table class="table">
         <thead class="thead-dark">
         <tr>
+            <th>Serial No.</th>
             <th>ID</th>
             <th>NAME</th>
             <th>EMAIL</th>
-                <th>PASSWORD</th>
+            <th>PASSWORD</th>
             <th>ACTION</th>
         </tr>
         </thead>
    
 
   <?php
+
+  $serial_number = 0;
     while($row = mysqli_fetch_assoc($result)){
         
        $id = $row['id'];
        $username =  $row['username'];
        $email = $row['email'];
        $password =  $row['password'];
+       $serial_number++;
 
    ?>
      <tbody>
          <tr> 
+                <td><?php  echo $serial_number ?></td>
                 <td><?php  echo $id ?></td>
                 <td><?php  echo $username ?></td>
                 <td><?php  echo $email ?></td>

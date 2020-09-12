@@ -1,4 +1,6 @@
+<?php require 'include/template.php' ?>
 
+<div class="container">
 <?php
 //learning upload file----------------------
 
@@ -114,25 +116,66 @@
 
 //     if($count > 0){
 
+//        if(isset($_REQUEST['deleted'])){
+//            echo "<font color='red'>Data Deleted</font>";
+//        }    
+
+//   ?>
+<!-- //  <div class="container">
+//  <table class="table">
+//     <thead class="thead-dark">
+//         <tr>
+//            <th>ID</th>
+//            <th>NAME</th>
+//            <th>EMAIL</th>
+//            <th>PASSWORD</th>
+//            <th>ACTION</th>
+//         </tr>
+//     </thead> -->
+   
+
+//  <?php
 //     while($row = mysqli_fetch_assoc($result)){
         
-//         echo "{$row['id']}";
-//         echo "<br>";
+//        $id = $row['id'];
+//        $username =  $row['username'];
+//        $email = $row['email'];
+//        $password =  $row['password'];
 
-//         echo "{$row['username']}";
-//         echo "<br>";
+//   ?>
+<!-- //     <tbody>
+//         <tr> 
+//             <td><?php  echo $id ?></td>
+//             <td><?php  echo $username ?></td>
+//             <td><?php  echo $email ?></td>
+//             <td><?php  echo $password ?></td>
+//             <td><a href="delete.php?id=<?php  echo $id  ?>">Delete</a></a></td>
+//         </tr>
+//     </tbody> -->
 
-//         echo "{$row['email']}";
-//         echo "<br>";
-
+ <?php
 //     }
 
+// ?>
+
+<!-- //  </table> -->
+ <?php
 //     echo "data = $count";
 
 //     }else{
 //         echo "You don't have any data on your database";
 //     }
 
-?>
+// ?>
+
+<!-- //  </div> -->
+
+
+
+
+
+
+</div>
+
 
   

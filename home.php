@@ -1,13 +1,13 @@
 <?php require 'include/template.php' ?>
 
 <div class="container">
-<form action = "" method ="post">
+<!-- <form action = "" method ="post">
 
       <input type="text" name="search_name" placeholder="search by your username">
 
       <input type="submit" name="search" value="search" class="btn btn-info">
 
-</form>
+</form> -->
 
 
 <?php
@@ -121,8 +121,8 @@ $connection = mysqli_connect('localhost','root','','users');
        $search = $_REQUEST['search_name'];
    
 
-    $query = "SELECT * FROM  user_info where username LIKE '%$search%'";
-    // $query = "SELECT * FROM  user_info";
+    // $query = "SELECT * FROM  user_info where username LIKE '%$search%'";
+    $query = "SELECT * FROM  user_info";
 
     $result = mysqli_query($connection,$query);
 
@@ -135,11 +135,22 @@ $connection = mysqli_connect('localhost','root','','users');
        }
        if(isset($_REQUEST['updated'])){
         echo "<font color='green'>Data Updated</font>";
-    }       
+    }    
+    
+    if(isset($_REQUEST['delete_m_data'])){
+        $chk_data = $_REQUEST['check_data'];
+        $all_mark = implode(",",$chk_data);
+
+        $recv_query = "DELETE FROM user_info WHERE id in ($all_mark)";
+
+        $delete_result = mysqli_query($connection,$recv_query);
+
+       
+    }
 
    ?>
 
-<form action="insert.php" method="post" enctype="multipart/form-data"> 
+<!-- <form action="insert.php" method="post" enctype="multipart/form-data"> 
  
  <input type="text" name="username" placeholder="username">
   <input type="email" name="email" placeholder="email">
@@ -148,7 +159,8 @@ $connection = mysqli_connect('localhost','root','','users');
   <input type="submit" name="submit" value="submit">
 
 
-</form>
+</form> -->
+
 
 
 
@@ -156,6 +168,7 @@ $connection = mysqli_connect('localhost','root','','users');
 <br>
 
     <div class="container">
+    <form action="" method="post">  
       <table class="table">
         <thead class="thead-dark">
         <tr>
@@ -166,6 +179,7 @@ $connection = mysqli_connect('localhost','root','','users');
             <th>EMAIL</th>
             <th>PASSWORD</th>
             <th>ACTION</th>
+            <th><input type="submit" class="btn btn-success" name="delete_m_data" value="Delete"></th>
         </tr>
         </thead>
    
@@ -192,6 +206,8 @@ $connection = mysqli_connect('localhost','root','','users');
                 <td><?php  echo $email ?></td>
                 <td><?php  echo $password ?></td>
                 <td><a href="single_data_edit.php?edit_id=<?php echo $id  ?>">Edit</a> || <a onclick="return confirm('Are you sure?')" href="delete.php?id=<?php  echo $id  ?>&profile_pic=<?php echo $profile_pic ?>">Delete</a></a></td>
+
+                <td><center><input type="checkbox" value="<?php echo $id; ?>" name="check_data[]"></center></td>
        </tr>
      </tbody>
 
@@ -201,6 +217,7 @@ $connection = mysqli_connect('localhost','root','','users');
 ?>
 
  </table>
+</form>
  <?php
     echo "data = $count";
 

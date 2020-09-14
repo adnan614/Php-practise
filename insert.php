@@ -5,6 +5,9 @@ if(isset($_POST['submit'])){
         $username =  $_POST['username'];
         $email =    $_POST['email'];
         $password =    $_POST['password'];
+        $gender = $_POST['gender']; 
+        $country = $_POST['country']; 
+
         $recv_file = $_FILES['upload_image'];
 
         $image_name = $recv_file['name'];
@@ -32,7 +35,7 @@ if(isset($_POST['submit'])){
            die("Not connected.". mysqli_error($connection));
         }
     
-        $query = "INSERT INTO user_info (profile_pic,username, email,password) VALUES ('$name_changer','$username','$email','$password')";
+        $query = "INSERT INTO user_info (profile_pic,username, email,password,gender,country) VALUES ('$name_changer','$username','$email','$password','$gender','$country')";
     
         $result = mysqli_query($connection,$query);
     

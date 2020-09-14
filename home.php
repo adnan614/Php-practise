@@ -117,8 +117,8 @@ $connection = mysqli_connect('localhost','root','','users');
        die("Not connected.". mysqli_error($connection));
     }
 
-    if(isset($_REQUEST['search'])){
-       $search = $_REQUEST['search_name'];
+    // if(isset($_REQUEST['search'])){
+    //    $search = $_REQUEST['search_name'];
    
 
     // $query = "SELECT * FROM  user_info where username LIKE '%$search%'";
@@ -136,17 +136,7 @@ $connection = mysqli_connect('localhost','root','','users');
        if(isset($_REQUEST['updated'])){
         echo "<font color='green'>Data Updated</font>";
     }    
-    
-    if(isset($_REQUEST['delete_m_data'])){
-        $chk_data = $_REQUEST['check_data'];
-        $all_mark = implode(",",$chk_data);
 
-        $recv_query = "DELETE FROM user_info WHERE id in ($all_mark)";
-
-        $delete_result = mysqli_query($connection,$recv_query);
-
-       
-    }
 
    ?>
 
@@ -154,9 +144,20 @@ $connection = mysqli_connect('localhost','root','','users');
  
  <input type="text" name="username" placeholder="username">
   <input type="email" name="email" placeholder="email">
-  <input type="password" name="password" placeholder="password">   
+  <input type="password" name="password" placeholder="password">
+  <input type="radio" name="gender" value="male">Male
+  <input type="radio" name="gender" value="female">Female
+<select name="country">
+  <option value="">Select Your Country</option>
+  <option value="Bangladesh">Bangladesh</option>
+  <option value="USA">USA</option>
+
+</select>
+  
   <input type="file" name="upload_image" value="Upload">
   <input type="submit" name="submit" value="submit">
+
+
 
 
 </form>
@@ -167,8 +168,7 @@ $connection = mysqli_connect('localhost','root','','users');
 
 <br>
 
-    <div class="container">
-    <form action="" method="post">  
+    <div class="container"> 
       <table class="table">
         <thead class="thead-dark">
         <tr>
@@ -179,7 +179,8 @@ $connection = mysqli_connect('localhost','root','','users');
             <th>EMAIL</th>
             <th>PASSWORD</th>
             <th>ACTION</th>
-            <th><input type="submit" class="btn btn-success" name="delete_m_data" value="Delete"></th>
+            <th>Gender</th>
+            <th>Country</th>
         </tr>
         </thead>
    
@@ -194,6 +195,9 @@ $connection = mysqli_connect('localhost','root','','users');
        $profile_pic = $row['profile_pic'];
        $email = $row['email'];
        $password =  $row['password'];
+       $gender =  $row['gender'];
+       $country =  $row['country'];
+
        $serial_number++;
 
    ?>
@@ -207,7 +211,8 @@ $connection = mysqli_connect('localhost','root','','users');
                 <td><?php  echo $password ?></td>
                 <td><a href="single_data_edit.php?edit_id=<?php echo $id  ?>">Edit</a> || <a onclick="return confirm('Are you sure?')" href="delete.php?id=<?php  echo $id  ?>&profile_pic=<?php echo $profile_pic ?>">Delete</a></a></td>
 
-                <td><center><input type="checkbox" value="<?php echo $id; ?>" name="check_data[]"></center></td>
+                <td><?php  echo $gender ?></td>
+                <td><?php  echo $country ?></td>
        </tr>
      </tbody>
 
@@ -217,7 +222,6 @@ $connection = mysqli_connect('localhost','root','','users');
 ?>
 
  </table>
-</form>
  <?php
     echo "data = $count";
 
@@ -225,7 +229,7 @@ $connection = mysqli_connect('localhost','root','','users');
         echo "You don't have any data on your database";
     }
 
-}
+// }
 
 ?>
 

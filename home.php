@@ -150,7 +150,7 @@ $connection = mysqli_connect('localhost','root','','users');
 
    ?>
 
-<!-- <form action="insert.php" method="post" enctype="multipart/form-data"> 
+<form action="insert.php" method="post" enctype="multipart/form-data"> 
  
  <input type="text" name="username" placeholder="username">
   <input type="email" name="email" placeholder="email">
@@ -159,7 +159,7 @@ $connection = mysqli_connect('localhost','root','','users');
   <input type="submit" name="submit" value="submit">
 
 
-</form> -->
+</form>
 
 
 

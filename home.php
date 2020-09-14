@@ -1,6 +1,15 @@
 <?php require 'include/template.php' ?>
 
 <div class="container">
+<form action = "" method ="post">
+
+      <input type="text" name="search_name" placeholder="search by your username">
+
+      <input type="submit" name="search" value="search" class="btn btn-info">
+
+</form>
+
+
 <?php
 //learning upload file----------------------
 
@@ -108,7 +117,12 @@ $connection = mysqli_connect('localhost','root','','users');
        die("Not connected.". mysqli_error($connection));
     }
 
-    $query = "SELECT * FROM  user_info";
+    if(isset($_REQUEST['search'])){
+       $search = $_REQUEST['search_name'];
+   
+
+    $query = "SELECT * FROM  user_info where username LIKE '%$search%'";
+    // $query = "SELECT * FROM  user_info";
 
     $result = mysqli_query($connection,$query);
 
@@ -135,6 +149,9 @@ $connection = mysqli_connect('localhost','root','','users');
 
 
 </form>
+
+
+
 
 <br>
 
@@ -190,6 +207,8 @@ $connection = mysqli_connect('localhost','root','','users');
     }else{
         echo "You don't have any data on your database";
     }
+
+}
 
 ?>
 
